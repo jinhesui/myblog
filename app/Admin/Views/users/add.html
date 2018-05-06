@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加用户</title>
+<link rel="stylesheet" href="./public/Admin/css/reset.css">
+<link rel="stylesheet" href="./public/Admin/css/adm.css">
+</head>
+<body>
+    <div id="main">
+            <h2 align="center">用户管理</h2>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="?c=Users&a=index">管理首页</a>&nbsp; |&nbsp;
+            <a href="?c=Users&a=create">添加用户</a>
+            <h2 align="center">添加用户</h2>
+            <form action="?c=Users&a=store" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>用户名称:</label>
+                    <p>
+                        <input type="text" name="username" />
+                    </p>
+                    <font color="#FF0000">*</font>
+                    <font>长度为5-15位（字母、数字），不能含有特殊符号</font>
+                </div>
+                <div class="form-group">
+                    <label>用户密码:</label>
+                    <p>
+                        <input type="password" name="password" />
+                    </p>
+                    <font color="#FF0000">*</font>
+                    <font>长度为6-16位</font>
+                </div>
+                <div class="form-group">
+                    <label>确认密码:</label>
+                    <p>
+                        <input type="password" name="confirm_password" />
+                    </p>
+                    <font color="#FF0000">*</font>
+                    <font>两次输入的密码必须一致</font>
+                </div>
+                <div class="form-group">
+                    <label>邮箱:</label>
+                    <p>
+                        <input type="text" name="email" />
+                    </p>
+                    <font color="#FF0000">*</font>
+                    <font>举个栗子：jinhesui@163.com</font>
+                </div>
+                <div class="form-group">
+                    <label>手机:</label>
+                    <p>
+                        <input type="text" name="phone" />
+                    </p>
+                    <font color="#FF0000">*</font>
+                    <font>举个栗子：15801554535</font>
+                </div>
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <p>
+                        <button type="submit">提交</button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

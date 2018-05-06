@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>果壳机动</title>
+<link rel="stylesheet" href="./public/Admin/css/reset.css">
+<link rel="stylesheet" href="./public/Admin/css/adm.css">
+</head>
+<body>
+    <div id="main">
+            <h2 align="center">友情链接管理</h2>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="?c=Links&a=index">管理首页</a> &nbsp;|&nbsp;
+            <a href="?c=Links&a=create">添加友情链接</a>
+            <table>
+                <tr align="center">
+                    <td>序号</td>
+                    <td>域名</td>
+                    <td>网址</td>
+                    <td>排序</td>
+                    <td>操作选项</td>
+                </tr>
+                {{foreach $links as $link}}
+                <tr align="center">
+                    <td>{{$link.id}}</td>
+                    <td>{{$link.domain}}</td>
+                    <td>{{$link.url}}</td>
+                    <td>{{$link.orderby}}</td>
+                    <td>
+                        <a href="?c=Links&a=edit&id={{$link.id}}">编辑</a>|
+                        <a href="javascript:void(0)" onclick="confirmDel({{$link.id}})">删除</a>
+                    </td>
+                </tr>
+                {{/foreach}}
+            </table>
+            <div id="pagebar">
+                Pages:&nbsp;
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                4
+                <a href="#">5</a>
+                <a href="#">6</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+//定义JS的删除函数
+function confirmDel(id){    
+    //询问是否要删除
+    if (window.confirm("你真的要删除吗？")) {
+        //跳转到删除页面
+        location.href = "?c=Links&a=destory&id="+id;
+    }
+}
+</script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>管理左边页</title>
+    <link type="text/css" rel="stylesheet" href="./public/Admin/css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="./public/Admin/css/adm.css" />
+    <script type="text/javascript" src="./public/Admin/js/jquery.js"></script>
+    <base target="main" />
+</head>
+<body>
+    <div id="left_ctn">
+    <ul class="sidenav">
+        <li class="now">
+            <div class="nav_m">
+                <span><a>分类管理</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li class="now_li">
+                    <span><a href="?c=Categories&a=create" target="main">添加分类</a></span>
+                </li>
+                <li>
+                    <span><a href="?c=Categories&a=index" target="main">分类管理</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a>文章管理</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li>
+                    <span><a href="?c=Posts&a=create" target="main">发布文章</a></span>
+                </li>
+                <li>
+                    <span><a href="?c=Posts&a=index" target="main">文章管理</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a>文章评论</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li>
+                    <span><a href="lfpz.html" target="main">评论列表</a></span>
+                </li>
+                <li>
+                    <span><a href="fwqkz.html" target="main">评论管理</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a>友情链接</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li>
+                    <span><a href="?c=Links&a=create" target="main">添加链接</a></span>
+                </li>
+                <li>
+                    <span><a href="?c=Links&a=index" target="main">链接管理</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a>用户管理</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li>
+                    <span><a href="?c=Users&a=create" target="main">添加用户</a></span>
+                </li>
+                <li>
+                    <span><a href="?c=Users&a=index" target="main">用户管理</a></span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+<!--框架高度设置-->
+<script type="text/javascript">
+$(function(){
+    $('.sidenav li').click(function(){
+        $(this).siblings('li').removeClass('now');
+        $(this).addClass('now');
+    });
+    
+    $('.erji li').click(function(){
+        $(this).siblings('li').removeClass('now_li');
+        $(this).addClass('now_li');
+    });
+    
+    var main_h = $(window).height();
+    $('.sidenav').css('height',main_h+'px');
+})
+</script>
+<!--框架高度设置-->
+</html>

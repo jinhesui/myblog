@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>顶部框架页</title>
+    <link type="text/css" rel="stylesheet" href="./public/Admin/css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="./public/Admin/css/adm.css" />
+
+</head>
+<body>
+    <header>
+        <div class="top">Blog后台管理系统</div>
+        <div class="top1">
+            <ul>
+                <li>
+                    <a href="?c=Users&a=logout" target="_top" >
+                        <img src="./public/Admin/images/tuichu.gif" style="border: none;">
+                    </a>
+                </li>
+                <li><a href="javascript:void(0)" target="_top">{{$smarty.session.username}}</a>，欢迎你！</li>
+                <li id="showTime"></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="top2">
+            <ul>
+                <li><a href="./index.php" target="_top">返回前台</a></li>
+                <li><a href="./admin.php" target="_top">后台首页</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </header>
+</body>
+<script src="./public/Admin/js/index.js"></script>
+</html>

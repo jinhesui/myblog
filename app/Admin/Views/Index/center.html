@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>关闭左边菜单</title>
+<script type="text/javascript">
+var displayBar=true;
+var displayBar1=true;
+function switchBar(obj,i){
+    if (i=='top') 
+    {
+        if (displayBar1) 
+        {
+            parent.frametop.rows="0,*";
+            displayBar1=false;
+            obj.src="./public/Admin/images/icon6_1.png";
+            obj.title="打开上边页";
+        } else {
+            parent.frametop.rows="65,*";
+            displayBar1=true;
+            obj.src="./public/Admin/images/icon6.png";
+            obj.title="关闭上边页";
+        }
+    } else {
+        if (displayBar)
+         {
+            parent.frameb.cols="0,10,*";
+            displayBar=false;
+            obj.src="./public/Admin/images/icon8.png";
+            obj.title="打开左边页";
+         } else {
+            parent.frameb.cols="222,10,*";
+            displayBar=true;
+            obj.src="./public/Admin/images/icon7.png";
+            obj.title="关闭左边页";
+         }
+    }
+}
+</script>
+</head>
+<body leftmargin="0" topmargin="0" oncontextmenu="self.event.returnValue=false">
+<noscript><iframe src="*.html"></iframe>></noscript>
+<table height="530" width="10%" border="0" cellpadding="0" cellspacing="1" bgcolor="FFFFF">
+    <tr>
+        <td valign="top"><img src="./public/Admin/images/icon6.png" title="关闭上边页" style="cursor: pointer; " align="top" onclick="switchBar(this,'top')"></td>
+    </tr>
+    <tr>
+        <td height="100%" valign="middle"><img src="./public/Admin/images/icon7.png" title="关闭左边页" style="cursor: pointer;" onclick="switchBar(this,'bottom')"></td>
+    </tr>
+</table>
+</body>
+</html>

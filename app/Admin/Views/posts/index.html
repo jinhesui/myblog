@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章列表</title>
+<link rel="stylesheet" href="./public/Admin/css/reset.css">
+<link rel="stylesheet" href="./public/Admin/css/adm.css">
+</head>
+<body>
+    <div id="main">
+        <h2 align="center">文章管理</h2>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="?c=Posts&a=index">管理首页</a> &nbsp;|&nbsp;
+            <a href="?c=Posts&a=create">添加文章</a> 
+            <div style="padding: 8px 5px;margin: 8px 3px;background-color: #fefefe;text-align: center; ">
+                <form action="?c=Posts&a=index" method="post" enctype="multipart/form-data">
+                    <span style="padding: 0px 5px;">分类</span>
+                    <select name="category_id">
+                        <option value="">任意</option>
+                        {{foreach $categories as $category}}
+                        <option value="{{$category.id}}">
+                            {{str_repeat("----",$category.level*2)}}
+                            {{$category.classname}}
+                        </option>
+                        {{/foreach}}
+                    </select>
+                    <span style="padding: 0px 5px;">标题</span>
+                    <input type="text" name="keyword" style="width:15%;" />
+                    <button type="submit">&nbsp;搜索&nbsp;</button>
+                </form>
+            </div>       
+            <table>
+                <tr align="center">
+                    <td>序号</td>
+                    <td>分类</td>
+                    <td>标题</td>
+                    <td>作者</td>
+                    <td>发布时间</td>
+                    <td>操作选项</td>
+                </tr>
+                {{foreach $posts as $post}}
+                <tr align="center">
+                    <td>{{$post.id}}</td>
+                    <td>{{$post.classname}}</td>
+                    <td>
+                        <a href="#">{{$post.title}}</a>
+                        {{if $post.top}}[<font color="red">顶</font>]{{/if}}
+                    </td>
+                    <td>{{$post.name}}</td>
+                    <td><span class="badge">{{$post.created_at}}</span></td>
+                    <td>
+                        <a href="?c=Posts&a=edit&id={{$post.id}}">编辑</a>|
+                        <a href="javascript:void(0)" onclick="confirmDel({{$post.id}})">删除</a>
+                    </td>
+                </tr>
+                {{/foreach}}
+            </table>
+            <div id="pagebar">
+                <p align="center">{{$pageStr}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+//定义JS的删除函数
+function confirmDel(id){    
+    //询问是否要删除
+    if (window.confirm("你真的要删除吗？")) {
+        //跳转到删除页面
+        location.href = "?c=Posts&a=destory&id="+id;
+    }
+}
+</script>
+</html>

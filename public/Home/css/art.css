@@ -1,0 +1,166 @@
+body {
+	background: #e9e3d6;
+}
+.w100 {
+	width: 100%;
+}
+
+.w980 {
+	width: 920px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.weizhi {
+	float: left;
+	color: #999;
+}
+
+.memberset {
+	float: right;
+	padding: 0px 8px 0px 8px;
+}
+
+#TextContent {
+	top:20px;
+	bottom: 20px;
+	left: 20px;
+	right: 20px;
+	word-break: break-all;
+	font-size: 18px;
+	line-height: 1.8;
+	text-align: justify;
+}
+
+.main {
+	width: 800px;
+	background: #f8f3e9;
+	border-radius: .3em;
+	margin: auto;
+	padding: 30px 65px;
+	border: 1px solid #d8d8d8;
+}
+
+#TextContent h1 {
+    font-size: 1.8em;
+    margin: .5em 0;
+    text-align: center;
+    padding-bottom: 20px;
+    background: url(../images/atitle_bottom.png) no-repeat 0 60px;
+    background-size: 100%;
+}
+
+.top {
+    text-align: center;
+}
+
+.kw {
+    float: left;
+    width: 1px;
+    height: 848px;
+}
+
+.main p {
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-indent: 2em;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+#gg {
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+
+.np {
+    width: 920px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.np a {
+    background: #f6f1e7;
+    color: #999;
+    border-radius: 5px;
+    padding: 5px 1.5em;
+    box-shadow: 0px 0px 1px rgba(204, 204, 204, 0.7);
+    margin: 0 0.5em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.np span {
+    color: #aaaaaa;
+}
+
+#comments {
+	color: #666;
+	font: 14px/21px '微软雅黑','黑体',sans-serif;
+	background: #FFF;
+	margin: 20px 0;
+	padding: 30px;
+}
+#comments li {
+	margin: 10px 0px;
+}
+#comments ol {
+	margin: 40px 0;
+}
+#comments img {
+	border-radius: 100%;
+	float: left;
+}
+
+#comments cite , #comments time {
+	padding-left: 10px;
+}
+
+#comments a {
+	color: #1373be;
+	font: 17px/25px '微软雅黑','黑体',sans-serif;
+}
+
+
+#comments li:last-of-type {
+	clear:left;
+	border: 1px solid rgba(0,0,0,0.05);
+	padding: 20px;
+}
+
+#respond {
+	background: #FFF;
+	padding: 30px 30px 0 30px;
+	margin: 20px 0;
+}
+
+#respond h3 {
+	margin-bottom: 20px; 
+	font: 20px/normal '微软雅黑','黑体',sans-serif;
+}
+
+#respond input {
+	margin-bottom: 10px;
+	padding: 10px 15px;
+	background: #FAFAFA;
+	color:#666;
+	border: 1px solid #ccc;
+	font: 17px/normal '微软雅黑','黑体',sans-serif;
+}
+#respond textarea {
+	padding: 10px 15px;
+	width: 100%;
+	box-sizing:border-box;
+}
+#respond input[type=submit] {
+	margin-top: 10px;
+	background: #3F3F3F;
+	color: #FFF;
+}

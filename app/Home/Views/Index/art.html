@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>果壳机动</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="./public/Home/css/reset.css">
+<link rel="stylesheet" href="./public/Home/css/index.css">
+<link rel="stylesheet" href="./public/Home/css/art.css">
+</head>
+<body>
+<header>
+        <h1>果壳机动</h1>
+        <h4>我登楼观百川，入海即入我怀</h4>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="?c=Index&a=index">首页</a></li>
+            <li><a href="?c=Index&a=showList">日志</a></li>
+            <li>
+                <a href="?c=Index&a=content&id={{$ids}}">今日事</a></li>
+            <li><a href="?c=Index&a=content&id=1">关于我</a></li>
+        </ul>
+    </nav>
+<div class="w100">
+  <div class="w980">
+    <div class="weizhi"><a href="?c=Index&a=index">博客首页</a> > <a href="?c=Index&a=showList">日志</a> > <a href="?c=Index&a=index&category_id={{$post.category_id}}">{{$post.classname}}</a> > <a href="">{{$post.title}}</a> > 正文</div>
+    <div class="memberset"></div>
+  </div>
+</div>
+<div class="main" id="TextContent">
+<h1>{{$post.title}}</h1>
+<dt class="top"></script></dt>
+<dt class="kw"></dt>
+<p>{{$post.content}}</p>
+<dt id="gg">
+  <time>{{$post.created_at|date_format:'%Y-%m-%d %H:%M'}}</time>
+                   <span>| 作者：{{$post.name}} | 
+                    分类：{{$post.classname}} |
+                    阅读：{{$post.read_total}} | 
+                    点赞：<a href="?c=Index&a=praise&id={{$post.id}}">{{$post.like_total}}</a> | 
+                    评论： {{$post.comment_count}}
+                    </span>
+</dt>
+</div>
+<div class="np">
+    {{if !empty($arr[0])}}
+    <a href="?c=Index&a=content&id={{$arr[0]['id']}}">上一章</a> 
+    {{else}}
+    <a href="?c=Index&a=showList">返回列表</a>
+    {{/if}}
+    <a href="?c=Index&a=showList">目录</a>
+    {{if !empty($arr[1])}}
+     <a href="?c=Index&a=content&id={{$arr[1]['id']}}">下一章</a>
+     {{else}}
+    <a href="?c=Index&a=showList">返回列表</a>
+    {{/if}}
+     <span>（方向键翻页，回车键返回目录）</span>
+     <a href="">加入书签</a>
+</div>
+</body>
+<script>
+  document.onkeydown = chang_page;
+    function chang_page() {
+        if(event.keyCode==13) location="?c=Index&a=showList";
+        if (event.keyCode == 37 || event.keyCode == 33)
+        {
+            {{if empty($arr[0])}}
+            location = "?c=Index&a=showList";
+            return;
+            {{else}}
+            location = "?c=Index&a=content&id={{$arr[0]['id']}}";
+            {{/if}}
+          }
+
+        if (event.keyCode == 39 || event.keyCode == 34)
+        {
+            {{if empty($arr[1])}}
+          location = "?c=Index&a=showList";
+          return;
+          {{else}}
+          location = "?c=Index&a=content&id={{$arr[1]['id']}}";
+          {{/if}}
+          }
+
+    }
+</script>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","weixin","tsina","sqq","qzone","renren","tqq","bdxc","tieba","twi","kaixin001","fbook","douban","thx","tqf","bdhome","ibaidu","huaban","ty","diandian","duitang","youdao","linkedin","hx","evernotecn","mail","people","meilishuo","bdysc","xinhua","mogujie","sdo","wealink","yaolan","h163","isohu","fx","iguba","qingbiji","copy","print"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"0","bdPos":"left","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<script src="./public/Home/js/jquery.js"></script>
+<script>
+$('nav li a').each(function(){  
+    if($($(this))[0].href==String(window.location))  
+        $(this).parent().addClass('active');  
+});
+</script>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>果壳机动</title>
+<link rel="stylesheet" href="./public/Home/css/reset.css">
+<link rel="stylesheet" href="./public/Home/css/index.css">
+</head>
+<body>
+    <header>
+        <h1>果壳机动</h1>
+        <h4>我登楼观百川，入海即入我怀</h4>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="?c=Index&a=index">首页</a></li>
+            <li><a href="?c=Index&a=showList">日志</a></li>
+            <li>
+                <a href="?c=Index&a=content&id={{$ids}}">今日事</a></li>
+            <li><a href="?c=Index&a=content&id=1">关于我</a></li>
+        </ul>
+    </nav>
+    <div id="main">
+        <div id="lside" >
+            <div id="space"></div>
+            <ul style="list-style-type:disc;list-style-position:inside;">
+                {{foreach $posts as $post}}
+                <li style="border-bottom:1px dashed #ccc;padding:10px 0px;font-size: 16px;">
+                    <a href="?c=Index&a=content&id={{$post.id}}">{{$post.title}}</a>
+                    <span style="float: right;padding-right: 50px;"><span>({{$post.comment_count}}/{{$post.read_total}})</span>{{$post.created_at|date_format:'%Y-%m-%d %H:%M'}}</span>
+                </li>
+                {{/foreach}}
+            </ul>
+            <div id="pagebar">
+                <p align="center">{{$pageStr}}</p>
+            </div>
+        </div>
+        <div id="rside">
+            <aside>
+                <form action="?c=Index&a=showList" method="post">
+                    <input type="text" name="title" placeholder="搜索...">
+                </form>
+            </aside>
+            <aside>
+                <h4>文章分类</h4>
+                <ul>
+                    {{foreach $categories as $category}}
+                    <li>
+                        <a href="?c=Index&a=showList&category_id={{$category.id}}">
+                        {{str_repeat("--",$category.level*2)}}
+                        {{$category.classname}}
+                        </a>(<font color="red">{{$category.records}}</font>)
+                    </li>
+                    {{/foreach}}
+                </ul>
+            </aside>
+            <aside>
+                <h4>文章归档</h4>
+                <ul>
+                    {{foreach $months as $month}}
+                    <li>
+                        <a href="">{{$month.months}}</a>
+                        (<font color="red">{{$month.records}}</font>)
+                    </li>
+                    {{/foreach}}
+                </ul>
+            </aside>
+            <aside>
+                <h4>友情链接</h4>
+                <ul>
+                    {{foreach $links as $link}}
+                    <li>
+                        <a href="{{$link.url}}" target="_blank">{{$link.domain}}</a>
+                    </li>
+                    {{/foreach}}
+                </ul>
+            </aside>
+        </div>
+    </div>
+    <footer>
+        Copyright &copy; 2018 · 果壳机动  · <a href="http://www.miitbeian.gov.cn/" target="_blank">鄂ICP备16007170号</a>
+    </footer>
+</body>
+<script src="./public/Home/js/jquery.js"></script>
+<script>
+$('nav li a').each(function(){  
+    if($($(this))[0].href==String(window.location))  
+        $(this).parent().addClass('active');  
+});
+</script>
+</html>

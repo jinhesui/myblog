@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>果壳机动</title>
+<link rel="stylesheet" href="./public/Admin/css/reset.css">
+<link rel="stylesheet" href="./public/Admin/css/adm.css">
+</head>
+<body>
+    <div id="main">
+            <h2 align="center">分类管理</h2>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="?c=Categories&a=index">管理首页</a> &nbsp;|&nbsp;
+            <a href="?c=Categories&a=create">添加文章分类</a>
+            <h2 align="center">添加文章分类</h2>
+            <form action="?c=Categories&a=store" method="post" enctype="multipart/form-data">
+                <div class="form-group1">
+                    <label>名称:</label>
+                    <p>
+                        <input type="text" name="classname" />
+                    </p>
+                </div>
+                <div class="form-group1">
+                    <label>排序:</label>
+                    <p>
+                        <input type="text" name="orderby" value="50" />
+                    </p>
+                </div>
+                <div class="form-group1">
+                    <label>父分类:</label>
+                    <p>
+                        <select name="pid">
+                            <option value="0">无</option>
+                            {{foreach $categories as $category}}
+                            <option value="{{$category.id}}">
+                                {{str_repeat("----",$category.level*2)}}
+                                {{$category.classname}}
+                            </option>
+                            {{/foreach}}
+                        </select>
+                    </p>
+                </div>
+                <div class="form-group1">
+                    <label>&nbsp;</label>
+                    <p>
+                        <button type="submit">提交</button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

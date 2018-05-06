@@ -1,0 +1,283 @@
+
+  @font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+    body {
+        background: #EFEFEF;
+		font-size:14px;
+    }
+
+	a {
+		color:#1e73be;
+	}
+
+    header{
+        background-image:url(../images/top_bg.gif);
+        height: 65px;
+        padding: 1px 0px;
+        box-sizing:border-box;
+        text-align: center;
+    }
+
+    .top {
+    margin-top: 10px;
+    margin-left: 60px;
+    float: left;
+    color:#FFFFFF;
+    }
+
+    .top1 {
+    margin-top: 10px;
+    margin-right: 20px;
+    float: right;
+    color:#FFFFFF;
+    }
+
+    .top2 {
+        margin-top: 36px;
+        margin-right: -200px;
+        float: right;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    .top1 li {
+        padding: 0 3px;
+        float :right;
+    }
+
+    .top2 li {
+        float :right;
+    }
+
+    .top2 a {
+        display: block;
+        padding: 0 9px;
+        color:#4A708B;
+    }
+
+    header h1,header h4{
+        width: 1100px;
+        margin:0 auto;
+    }
+
+    header h1 {
+        font: 45px '微软雅黑','黑体',sans-serif;
+    }
+
+    header h4{
+        color: #999999;
+        font: 19px/20px '新宋体','宋体',serif;
+    }
+
+    nav {
+        background: #222;
+    }
+
+    nav ul {
+        width: 1100px;
+        height: 60px;
+        margin: 0 auto;
+    }
+
+    nav li {
+        position: relative;
+        float: left;
+    }
+
+    nav img {
+        position: absolute;
+        top:0px;
+        right: 0px;
+    }
+    nav a{
+        display: block;
+        padding: 0 20px;
+        line-height: 60px;
+        color: white;
+        font-size: 17px;
+        font-family: '新宋体','宋体',serif;
+    }
+
+    nav a:hover {
+        background: #3f3f3f;
+    }
+
+    #main {
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+    }
+
+    #main::after {
+        content: '';
+        height: 0px;
+        display: block;
+        clear: both;
+    }
+
+    #lside {
+        width: 20%;
+        min-height: 400px;
+        float: left;
+    }
+
+    #rside {
+        width: 80%;
+        min-height: 400px;
+        float: right;
+	padding:20px;
+	box-sizing:border-box;
+    }
+
+    aside {
+        background: white;
+        padding: 25px;
+        margin-bottom: 20px;
+    }
+
+    aside:first-child,article:first-child {
+        margin-top: 20px;
+    } 
+
+/*     aside:last-child {
+    margin-bottom: 10px;
+} */
+
+    aside h4 {
+        color: black;
+        font:20px/24px '微软雅黑','黑体',sans-serif;
+        margin-bottom: 30px;
+    }
+
+    aside a,aside:visited {
+        color: #1e73be;
+        font: 14px/26px '新宋体','宋体',serif;
+    }
+
+    aside a:hover {
+        color: black;
+    }
+
+    aside input {
+        border: 1px solid #CCCCCC;
+        background: #FAFAFA;
+        width: 100%;
+        padding: 10px 15px;
+        box-sizing:border-box;
+        color: #666666;
+        font-size: 16px;
+    }
+
+    footer{
+        margin-top: 500px;
+        height: 22px;
+        box-sizing:border-box;
+        background-image:url(../images/top_bg.gif);
+        text-align: center;
+        color: white; 
+        font:17px/22px '微软雅黑','黑体',sans-serif;
+    }
+
+    #pagebar{
+        color: #3a3a3a;
+        font:17px/22px '微软雅黑','黑体',sans-serif;
+        margin: 20px 0px;
+    }
+
+    #pagebar a,#pagebar a:visited {
+        color: #1e73be;
+    }
+
+    #pagebar a:hover {
+        color: black;
+    }
+
+	table {
+		width:100%;
+	}
+
+	tr {
+		border-bottom:1px solid gray;
+	}
+	td {
+		padding:5px 0;
+	}
+
+.form-group {
+margin:10px 0;
+}
+
+.form-group::after {
+	content:'';
+	display:block;
+	clear:both;
+}
+
+.form-group label {
+float:left;
+width:15%;
+text-align:right;
+font-weight:bold;
+margin-right:20px;
+}
+
+.form-group p {
+float:left;
+width:45%;
+}
+
+.form-group1 label {
+float:left;
+width:30%;
+text-align:right;
+font-weight:bold;
+margin-right:20px;
+}
+
+.form-group1 p {
+float:left;
+width:45%;
+}
+
+input {
+	width:90%;
+	height:25px;
+	font:14px/22px;
+	margin-bottom: 10px;
+	background: #FAFAFA;
+	color:#666;
+	border: 1px solid #ccc;
+}
+textarea {
+	padding: 5px 10px;
+	width: 90%;
+	box-sizing:border-box;
+}
+
+input[type=submit] {
+	margin-top: 10px;
+	background: #3F3F3F;
+	color: #FFF;
+}
+
+.succ {
+color:green;
+font:20px/30px sans-serif;
+padding:15px 30px;
+text-align:center;
+}
+
+.danger {
+color:red;
+font:20px/30px sans-serif;
+padding:15px 30px;
+text-align:center;
+}
